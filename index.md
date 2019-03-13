@@ -1,3 +1,0 @@
-## Padilha.dev
-
-> Welcome
