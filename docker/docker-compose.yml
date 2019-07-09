@@ -4,7 +4,7 @@ services:
     image: httpd:2.4
     container_name: padilha-dev_web
     environment:
-      VIRTUAL_HOST: padilha.dev
+      VIRTUAL_HOST: padilha.dev,lplabs.com.br
     expose:
       - 80
     volumes:
