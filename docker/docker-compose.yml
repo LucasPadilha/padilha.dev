@@ -1,0 +1,22 @@
+version: "3"
+services:
+  padilha-dev_web:
+    image: httpd:2.4
+    container_name: padilha-dev_web
+    environment:
+      VIRTUAL_HOST: padilha.dev
+    expose:
+      - 80
+    volumes:
+      - /home/sites/public/padilha.dev/src/:/usr/local/apache2/htdocs/
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+        max-file: "10"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
