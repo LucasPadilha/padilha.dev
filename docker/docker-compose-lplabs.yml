@@ -1,15 +1,12 @@
 version: "3"
 services:
-  padilha-dev_web:
+  lplabs_web:
     image: httpd:2.4
-    container_name: padilha-dev_web
+    container_name: lplabs_web
     environment:
-      VIRTUAL_HOST: padilha.dev
-      VIRTUAL_PROTO: https
-      VIRTUAL_PORT: 443
+      VIRTUAL_HOST: lplabs.com.br
     expose:
       - 80
-      - 443
     volumes:
       - /home/sites/public/padilha.dev/src/:/usr/local/apache2/htdocs/
     restart: unless-stopped
