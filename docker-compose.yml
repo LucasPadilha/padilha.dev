@@ -1,16 +1,16 @@
 version: "3"
 services:
-  padilha-dev_web:
-    image: httpd:2.4
-    container_name: padilha-dev_web
+  padilhadev_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: padilhadev_web
     environment:
       VIRTUAL_HOST: padilha.dev
       LETSENCRYPT_HOST: padilha.dev
       LETSENCRYPT_EMAIL: padilhaght+letsencrypt@gmail.com
     expose:
       - 80
-    volumes:
-      - /home/sites/public/padilha.dev/dist/:/usr/local/apache2/htdocs/
     restart: unless-stopped
     logging:
       driver: "json-file"
