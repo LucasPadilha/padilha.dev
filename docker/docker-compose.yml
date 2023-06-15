@@ -10,7 +10,7 @@ services:
     expose:
       - 80
     volumes:
-      - /home/sites/public/padilha.dev/src/:/usr/local/apache2/htdocs/
+      - /home/sites/public/padilha.dev/dist/:/usr/local/apache2/htdocs/
     restart: unless-stopped
     logging:
       driver: "json-file"
