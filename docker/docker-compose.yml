@@ -7,7 +7,7 @@ services:
     expose:
       - 80
     volumes:
-      - ./dist/:/usr/local/apache2/htdocs/
+      - ../dist/:/usr/local/apache2/htdocs/
     restart: unless-stopped
     logging:
       driver: "json-file"
@@ -17,5 +17,5 @@ services:
 
 networks:
   default:
-    external:
-      name: dumbledore
+    external: true
+    name: dumbledore
